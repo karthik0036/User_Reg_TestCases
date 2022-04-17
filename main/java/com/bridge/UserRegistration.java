@@ -21,6 +21,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    public static boolean phone(String phone){
+        Pattern pattern = Pattern.compile("^[0-9]{2}\\s{0,1}[0-9]{9,}$");
+        Matcher matcher = pattern.matcher(phone);
+        return matcher.matches();
+    }
 
     public static void main(String[] args) {
         boolean a = firstName("Firstname");
@@ -31,6 +36,10 @@ public class UserRegistration {
 
         boolean c = email("Aabc_123@gmail.co.in");
         System.out.println(c);
+
+        boolean d = phone("91 9999888889");
+        System.out.println(d);
+
     }
 
 }
