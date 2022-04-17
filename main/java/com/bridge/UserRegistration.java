@@ -44,6 +44,19 @@ public class UserRegistration {
         return matcher.matches();
     }
 
+    public static boolean pwdRule4(String password) {
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+
+    public static boolean emailIdValidator(String emailId) {
+        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailId);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
         boolean a = firstName("Firstname");
         System.out.println(a);
@@ -65,6 +78,12 @@ public class UserRegistration {
 
         boolean g = pwdRule3("Abcda1a@");
         System.out.println(g);
+
+        boolean h = pwdRule4("Abcda12!");
+        System.out.println(h);
+
+        boolean i = emailIdValidator("abc+100@gmail.com");
+        System.out.println(i);
 
     }
 
