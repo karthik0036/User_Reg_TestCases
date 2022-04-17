@@ -16,12 +16,21 @@ public class UserRegistration {
         return matcher.matches();
     }
 
+    public static boolean email(String email){
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
         boolean a = firstName("Firstname");
         System.out.println(a);
 
         boolean b = lastName("Lastname");
         System.out.println(b);
+
+        boolean c = email("Aabc_123@gmail.co.in");
+        System.out.println(c);
     }
 
 }
