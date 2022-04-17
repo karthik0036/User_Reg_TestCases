@@ -27,6 +27,12 @@ public class UserRegistration {
         return matcher.matches();
     }
 
+    public static boolean pwdRule1(String password) {
+        Pattern pattern = Pattern.compile("^[0-9a-zA-Z!,@#$&*().]{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
         boolean a = firstName("Firstname");
         System.out.println(a);
@@ -39,6 +45,9 @@ public class UserRegistration {
 
         boolean d = phone("91 9999888889");
         System.out.println(d);
+
+        boolean e = pwdRule1("Abcd12!@");
+        System.out.println(e);
 
     }
 
