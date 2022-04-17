@@ -10,9 +10,18 @@ public class UserRegistration {
         return matcher.matches();
     }
 
+    public static boolean lastName(String lastName){
+        Pattern pattern = Pattern.compile("^[A-Z]+[a-z]{2,}$");
+        Matcher matcher = pattern.matcher(lastName);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
-        boolean a = firstName("Adsfd");
+        boolean a = firstName("Firstname");
         System.out.println(a);
+
+        boolean b = lastName("Lastname");
+        System.out.println(b);
     }
 
 }
