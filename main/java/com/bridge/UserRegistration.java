@@ -38,6 +38,12 @@ public class UserRegistration {
         return matcher.matches();
     }
 
+    public static boolean pwdRule3(String password) {
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
         boolean a = firstName("Firstname");
         System.out.println(a);
@@ -56,6 +62,9 @@ public class UserRegistration {
 
         boolean f = pwdRule2("Abcd12!@");
         System.out.println(f);
+
+        boolean g = pwdRule3("Abcda1a@");
+        System.out.println(g);
 
     }
 
